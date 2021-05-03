@@ -30,6 +30,7 @@ app.use('/api/staffs', require('./routes/staffs'))
 app.use('/api/users', require('./routes/users'))
 app.use('/api/products', require('./routes/products'))
 app.use('/api/stores', require('./routes/stores'))
+app.use('/api/orders', require('./routes/orders'))
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

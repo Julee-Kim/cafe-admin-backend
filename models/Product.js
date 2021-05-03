@@ -38,6 +38,9 @@ const productSchema = mongoose.Schema({
   caffeine: {
     type: Number
   },
+  price: {
+    type: Number
+  },
   img: {
     type: String
   },

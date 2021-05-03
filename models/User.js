@@ -13,14 +13,23 @@ const userSchema = mongoose.Schema({
   email: {
     type: String,
   },
-  password: {
+  // password: {
+  //   type: String,
+  // },
+  phone: {
+    type: String,
+  },
+  zonecode: {
+    type: String,
+  },
+  address: {
+    type: String,
+  },
+  addressDetail: {
     type: String,
   },
   join_date: {
     type: Date,
-  },
-  shopping_history: {
-    type: Array,
   }
 });
 

@@ -18,17 +18,17 @@ router.get('/', async (req, res) => {
 
   if(store) {
     findArgs.push({
-      category: { $regex: store }
+      store: { $regex: store }
     });
   }
   if(sido) {
     findArgs.push({
-      product_name: { $regex: sido }
+      sido: { $regex: sido }
     })
   }
   if(gugun) {
     findArgs.push({
-      product_name: { $regex: gugun }
+      gugun: { $regex: gugun }
     })
   }
 
