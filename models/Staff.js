@@ -15,7 +15,7 @@ const staffSchema = mongoose.Schema({
 	},
 	password: {
 		type: String,
-		minlength: 5
+		minlength: 1
 	},
 	lastname: {
 		type: String,
