@@ -19,7 +19,6 @@ app.use(cors({
 	// : 'http://localhost:8080',
 	origin: true,
 	credentials: true,
-	exposedHeaders: ["set-cookie"],
 }));
 
 // application/x-www-form-urlencoded
