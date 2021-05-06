@@ -14,9 +14,10 @@ console.log('process.env.NODE_ENV ==> ', process.env.NODE_ENV)
 
 // app.use(cors())
 app.use(cors({
-	origin: process.env.NODE_ENV === 'production'
-	? 'https://6093eb18ded37d0007726eab--pensive-roentgen-8770e3.netlify.app'
-	: 'http://localhost:8080',
+	// origin: process.env.NODE_ENV === 'production'
+	// ? 'https://6093eb18ded37d0007726eab--pensive-roentgen-8770e3.netlify.app'
+	// : 'http://localhost:8080',
+	origin: '*',
 	credentials: true
 }));
 
