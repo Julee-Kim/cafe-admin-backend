@@ -12,24 +12,13 @@ dotenv.config();
 
 console.log('process.env.NODE_ENV ==> ', process.env.NODE_ENV)
 
-//CORS requires Headers, Methods, Origin.
-const corsOptions = {
-	origin: '*',
-	credentials: true,
-	methods: ['GET', 'POST', 'OPTIONS'],
-	allowedHeaders: ['Content-Type', 'Authorization']
-};
-
-// middleware handle all request using cors options
-app.use(cors(corsOptions))
-
-// app.use(cors({
-// 	// origin: process.env.NODE_ENV === 'production'
-// 	// ? 'https://6093eb18ded37d0007726eab--pensive-roentgen-8770e3.netlify.app'
-// 	// : 'http://localhost:8080',
-// 	origin: '*',
-// 	credentials: true
-// }));
+// app.use(cors())
+app.use(cors({
+	origin: process.env.NODE_ENV === 'production'
+	? 'https://6093eb18ded37d0007726eab--pensive-roentgen-8770e3.netlify.app'
+	: 'http://localhost:8080',
+	credentials: true
+}));
 
 // application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
