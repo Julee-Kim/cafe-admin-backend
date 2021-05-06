@@ -36,7 +36,7 @@ router.post('/login', (req, res) => {
 			// 비밀번호가 맞다면 token 생성
 			staff.createToken((err, staff) => {
         if (err) return res.status(400).send(err);
-
+				console.log('aa =>', authToken)
 				// 토큰을 쿠키에 저장
 				res.cookie('authToken', staff.token).status(200).json({success: true, staffId: staff._id})
 			})
