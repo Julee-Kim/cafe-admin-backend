@@ -10,7 +10,7 @@ const config = require('./config/key')
 const dotenv = require('dotenv')
 dotenv.config();
 
-app.use(cors());
+app.use(cors({ credentials: true }));
 // application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 // application/json
