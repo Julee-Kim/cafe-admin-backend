@@ -5,6 +5,8 @@ let auth = (req, res, next) => {
 	// 클라이언트 쿠키에서 토큰을 가져옴
 	let token = req.cookies.authToken;
 
+	console.log('authToken => ', token)
+
 	if (!token) {
 		return res.json({ success: false, errorCode: 'check-login', message: '로그인이 필요한 서비스입니다.' })
 	}
