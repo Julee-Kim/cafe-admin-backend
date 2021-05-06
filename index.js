@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5000
+const port = process.env.PORT || 5000
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
@@ -18,7 +18,7 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 
 const mongoose = require('mongoose')
-mongoose.connect(config.mongoURI, {
+mongoose.connect(config.MONGO_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true,
@@ -33,5 +33,5 @@ app.use('/api/stores', require('./routes/stores'))
 app.use('/api/orders', require('./routes/orders'))
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  if(port === 5000) console.log(`Example app listening at http://localhost:${port}`)
 })
