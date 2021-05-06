@@ -7,7 +7,7 @@ let auth = (req, res, next) => {
 	console.log('authToken => ', token)
 	console.log(typeof token);
 
-	if (!token) {
+	if (token !== undefined) {
 		return res.json({ success: false, errorCode: 'check-login', message: '로그인이 필요한 서비스입니다.' })
 	}
 
