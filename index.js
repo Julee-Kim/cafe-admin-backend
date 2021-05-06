@@ -15,7 +15,7 @@ console.log('process.env.NODE_ENV ==> ', process.env.NODE_ENV)
 // app.use(cors())
 app.use(cors({
 	origin: process.env.NODE_ENV === 'production'
-	? 'https://6093fd45ca095a0008817afd--pensive-roentgen-8770e3.netlify.app'
+	? 'https://6094001ae459cf000726bc1e--pensive-roentgen-8770e3.netlify.app'
 	: 'http://localhost:8080',
 	credentials: true,
 	exposedHeaders: ["set-cookie"],
