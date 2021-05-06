@@ -10,12 +10,15 @@ const config = require('./config/key')
 const dotenv = require('dotenv')
 dotenv.config();
 
-app.use(cors({
-	origin: process.env.NODE_ENV === 'production'
-	? 'https://60938086005aaa00080e7c7e--pensive-roentgen-8770e3.netlify.app'
-	: 'http://localhost:8080',
-	credentials: true
-}));
+console.log('process.env.NODE_ENV ==> ', process.env.NODE_ENV)
+
+app.use(cors())
+// app.use(cors({
+// 	origin: process.env.NODE_ENV === 'production'
+// 	? 'https://60938086005aaa00080e7c7e--pensive-roentgen-8770e3.netlify.app'
+// 	: 'http://localhost:8080',
+// 	credentials: true
+// }));
 
 // application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
