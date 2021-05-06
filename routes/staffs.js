@@ -38,7 +38,7 @@ router.post('/login', (req, res) => {
         if (err) return res.status(400).send(err);
 				console.log('staff.token =>', staff.token)
 				// 토큰을 쿠키에 저장
-				res.cookie('authToken', staff.token).status(200).json({success: true, staffId: staff._id})
+				res.cookie('authToken', staff.token, { sameSite: 'none', secure: true }).status(200).json({success: true, staffId: staff._id})
 			})
 		})
 	})
