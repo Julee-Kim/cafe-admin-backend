@@ -17,7 +17,8 @@ app.use(cors({
 	origin: process.env.NODE_ENV === 'production'
 	? 'https://6093fd45ca095a0008817afd--pensive-roentgen-8770e3.netlify.app'
 	: 'http://localhost:8080',
-	credentials: true
+	credentials: true,
+	exposedHeaders: ["set-cookie"],
 }));
 
 // application/x-www-form-urlencoded
