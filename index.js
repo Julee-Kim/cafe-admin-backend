@@ -26,6 +26,7 @@ mongoose.connect(config.MONGO_URI, {
 }).then(() => console.log('MongoDB Connected!'))
 	.catch(err => console.log(err))
 
+app.get('/', (req, res) => res.send('Hello:)'))
 app.use('/api/staffs', require('./routes/staffs'))
 app.use('/api/users', require('./routes/users'))
 app.use('/api/products', require('./routes/products'))
