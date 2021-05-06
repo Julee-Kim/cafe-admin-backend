@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cookieParser())
 
-console.log('mongo uri: ', process.env.MONGO_URI)
+console.log('mongo uri: ', config.MONGO_URI)
 
 const mongoose = require('mongoose')
 mongoose.connect(config.MONGO_URI, {
