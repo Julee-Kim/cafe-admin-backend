@@ -15,7 +15,7 @@ console.log('process.env.NODE_ENV ==> ', process.env.NODE_ENV)
 // app.use(cors())
 app.use(cors({
 	origin: process.env.NODE_ENV === 'production'
-	? '*'
+	? 'https://6093e3f3514bfe000759581d--pensive-roentgen-8770e3.netlify.app'
 	: 'http://localhost:8080',
 	credentials: true
 }));
