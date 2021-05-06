@@ -10,7 +10,7 @@ const config = require('./config/key')
 const dotenv = require('dotenv')
 dotenv.config();
 
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 // application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 // application/json
@@ -34,5 +34,5 @@ app.use('/api/stores', require('./routes/stores'))
 app.use('/api/orders', require('./routes/orders'))
 
 app.listen(port, () => {
-  console.log(`Server Running at ${port}`)
+  if(port === 5000) console.log(`Example app listening at http://localhost:${port}`)
 })
