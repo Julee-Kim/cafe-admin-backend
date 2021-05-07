@@ -10,13 +10,7 @@ const config = require('./config/key')
 const dotenv = require('dotenv')
 dotenv.config();
 
-console.log('process.env.NODE_ENV ==> ', process.env.NODE_ENV)
-
-// app.use(cors())
 app.use(cors({
-	// origin: process.env.NODE_ENV === 'production'
-	// ? 'https://6094001ae459cf000726bc1e--pensive-roentgen-8770e3.netlify.app'
-	// : 'http://localhost:8080',
 	origin: true,
 	credentials: true,
 }));
@@ -26,8 +20,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // application/json
 app.use(bodyParser.json())
 app.use(cookieParser())
-
-console.log('mongo uri: ', config.MONGO_URI)
 
 const mongoose = require('mongoose')
 mongoose.connect(config.MONGO_URI, {
